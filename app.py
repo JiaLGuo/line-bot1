@@ -38,9 +38,21 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+    msg = event.message.text
+    reply='不好伊速，偶不豬道你在說什麼?'
+    if msg in ['妳是誰', '名字']:
+        reply = '張巧巧'
+    elif msg in '住哪':
+        reply = '偶素桃園平鎮小公主'
+    elif msg in '電話':
+        reply = '偶男友說不可以隨便給人喔'
+    elif msg in '生日':
+        reply = '9/14 記得送我禮物^^'
+    elif msg in ['身高', '體重']:
+        reply = '153cm 52kg'
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=event.message.text))
+        TextSendMessage(text=reply))
 
 
 if __name__ == "__main__":
