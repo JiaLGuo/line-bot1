@@ -40,11 +40,16 @@ def callback():
 def handle_message(event):
     msg = event.message.text
     reply='不好伊速，偶不豬道你在說什麼?'
+
     if '給我貼圖' in msg:
         sticker_message = StickerSendMessage(
             package_id='11538',
             sticker_id='51626502'
         )
+
+        line_bot_api.reply_message(
+            event.reply_token,
+            sticker_message)
         return
 
     if msg in ['妳是誰', '名字']:
