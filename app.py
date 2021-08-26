@@ -43,7 +43,7 @@ def handle_message(event):
 
     if '給我貼圖' in msg:
         sticker_message = StickerSendMessage(
-            package_id='1'#'11538',
+            package_id='1',#'11538',
             sticker_id='1'#'51626502'
         )
 
